@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <style>
+      /* nav */
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color:#FFE5CA;
+    color: black;
+    font-family: "Poppins", sans-serif;
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    background-color: #E74646;
+  }
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  nav ul li {
+    list-style: none;
+    margin: 0 23px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+  }
+  nav ul li a:hover {
+    color: #42032C;
+  }
+
+/* FirstSection */
+ .firstSection{
+    background-image:url("static/images/c1.jpg");
+    width:100%;
+    height: 100vh;
+    align-items: center;
+ }
+ .firstSection h1{
+    /* background-color: red; */
+    font-size: 60px;
+    text-align: center;
+    padding:100px 0;
+    font-family: 'Roboto Slab',serif;
+
+  }
+  
+
+  /* second Section */
+  .secondSection{
+    color:black;
+  }
+
+  #about {
+    padding: 80px 0;
+    color: black;
+  }
+  .result{
+    border:2px solid black;
+    color:black;
+    padding:10px;
+    width:400px;
+    height:50px;
+    text-align:centre;
+  }
+  #loading {
+    display: none;
+  }
+  .row {
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+  }
+  .about-col-1 img{
+    margin-left:50px;
+  }
+  .about-col-2 {
+    flex-basis: 50%;
+  }
+  .sub-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  /* .about-col-2 form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  } */
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    width: 250px;
+    color:black;
+    font-size: 18px;
+  }
+
+  .form-group input,
+  .form-group select {
+    width: 200px;
+    padding:10px;
+    border-radius: 10px;
+  }
+  form input[type="submit"]{
+    padding:10px;
+    border-radius: 5px;
+    color:black;
+    width:150px;
+  }
+
+  .thirdSection h1{
+    width:100%;
+    font-size: 40px;
+    font-weight: 600;
+    
+
+  }
+  
+  .fourthSection{
+    height:400px;
+  }
+  .fourthSection .container{
+    display: flex;
+    justify-content: space-between;
+  }
+  .fourthSection h1{
+    color:black;
+    padding:20px;
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .fourthSection .users{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 40px;
+
+
+  }
+  .fourthSection .users .section_title{
+    color:black;
+
+  }
+  footer{
+    background-color: #E74646;
+  }
+  .footer {
+    display: flex;
+    padding: 23px 112px;
+    justify-content: space-evenly;
+  }
+  .footer ul {
+    list-style-type: none;
+  }
+  footer .test-center {
+    text-align: center;
+    color: black;
+    padding: 12px 0;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+    color: black;
+  }
+  start{
+    color:black;
+  }
+
+
+</style>
+    <title>Carfare</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="red">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#prediction">Prediction</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#developer">Developers</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="firstSection">
+        <div class="start">
+        <h1 class="Heading">
+          Welcome to the
+          <br />
+          <span >Uber Car Fare Prediction Platform</span>
+        </h1>
+      </div>
+      </section>
+      <!-- Second Section -->
+<section class="secondSection" id="prediction">
+  <div id="about">
+    <div class="row">
+      <div class="about-col-1">
+        <img src="static\images\book.jpg" width="500px" height="450px" />
+      </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">Prediction</h1>
+        <form action="/pred" method="POST">
+          <div class="form-group">
+            <label>Distance:</label>
+            <input type="number"step="any"id="distance" name="distance"><br>
+          </div>
+          <div class="form-group">
+            <label>Select Source Location:</label>
+            <select id="sourceLocation" name="source">
+              <!-- Add options based on your source locations -->
+              <option >Select Source</option>
+              <option value="Haymarket Square">Haymarket Square</option>
+              <option value="Back Bay">Back Bay</option>
+              <option value="North End">North End</option>
+              <option value="North Station">North Station</option>
+              <option value="Beacon Hill">Beacon Hill</option>
+              <option value="Boston University">Boston University</option>
+              <option value="Fenway">Fenway</option>
+              <option value="South Station">South Station</option>
+              <option value="Theatre District">Theatre District</option>
+              <option value="West End">West End</option>
+              <option value="Financial District">Financial District</option>
+              <option value="Northeastern University">Northeastern University</option>
+              
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Select Destination Location:</label>
+            <select id="destinationLocation" name="destination">
+              <!-- Add options based on your source locations -->
+              <option >Select Destination</option>
+              <option value="Haymarket Square">Haymarket Square</option>
+              <option value="Back Bay">Back Bay</option>
+              <option value="North End">North End</option>
+              <option value="North Station">North Station</option>
+              <option value="Beacon Hill">Beacon Hill</option>
+              <option value="Boston University">Boston University</option>
+              <option value="Fenway">Fenway</option>
+              <option value="South Station">South Station</option>
+              <option value="Theatre District">Theatre District</option>
+              <option value="West End">West End</option>
+              <option value="Financial District">Financial District</option>
+              <option value="Northeastern University">Northeastern University</option>
+              
+              <!-- Add more options as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Product ID:</label>
+            <input type="number"id="product_id" name="product_id"><br>
+          </div>
+          <div class="form-group">
+            <label>Select Car:</label>
+            <select id="name" name="name">
+              <option >Select Car</option>
+              <option value="UberXL">UberXL</option>
+              <option value="WAV">WAV</option>
+              <option value="BlackSUV">BlackSUV</option>
+              <option value="Black">Black</option>
+              <option value="UberX">UberX</option>
+              <option value="UberPool">UberPool</option>
+              
+            </select>
+          </div>
+          <div "style=color:#FFE5CA">
+          <input type="submit" value="Submit" />
+          </div>
+        </form>
+        <br />
+        <br />
+        <div class="result">Prediction: {{result}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br>
+
+      <section class="thirdSection" id="analytics">
+        <h1>Analytics and Visualization</h1>
+        <img title="Report Section" width="100%" align-items= "center" height="900px" src="static\images\pic.png" frameborder="0" allowFullScreen="true">
+        </section>
+
+      <section class="fourthSection" id="developer">
+        <h1>Developers</h1>
+        <div class="container">
+          <div class="duo">
+            <div class="users">
+              <h2 class="section_title">
+                <span>Shaik Afraa</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                afraa.21bce9022@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-9052621557</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="users">
+              <h2 class="section_title">
+                <span>Alekhya</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                alekhya.21bce9018@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-7702225744</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="users">
+              <h2 class="section_title">
+                <span>Sampath</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                sampath.21bce8466@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-7901357157</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="users">
+              <h2 class="section_title">
+                <span>Uday</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                uday.21bce8623@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-8125313385</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="duo">
+            <div class="users">
+              <h2 class="section_title">
+                <span>Deekshita</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>deekshita.21bce8998@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-9908197495</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="users">
+              <h2 class="section_title">
+                <span>Lasya</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                lasyasri.21bce9314@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-9490621263</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="users">
+              <h2 class="section_title">
+                <span>Nikhil</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                nikhil.21bce7801@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-8522889505</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="duo">
+            <div class="users">
+              <h2 class="section_title">
+                <span>Uday</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                bala.21bce9613@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-8555853733</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="users">
+              <h2 class="section_title">
+                <span>Sujith</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                sujith.21bce7429@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-9989175904</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+            <div class="users">
+              <h2 class="section_title">
+                <span>Sathwika</span>
+              </h2>
+              <p>
+                <i class="fa-solid fa-paper-plane"></i>
+                sathwika.21bce8118@vitapstudent.ac.in
+              </p>
+              <p><i class="fa-solid fa-square-phone"></i> +91-7993164494</p>
+              <div class="social-icons">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>  
+          </div>
+        </div>
+      </section>
+      <br>
+      <br><br><br><br><br><br><br><br><br><br>
+      <footer>
+        <div class="test-center">
+          Copyright &copy;Afraa | All rights reserved
+        </div>
+      </footer>
+    </main>
+    </body>
+</html>
